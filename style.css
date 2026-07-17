@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .call-link{
     text-decoration: none;
     font-weight: 600;
@@ -41,14 +46,20 @@
 
 .head{
     justify-content: space-between;
+    align-items: center;
     background-color: #ece8d9;
-    position:sticky;
+    position: sticky;
     top: 0;
+    gap: 20px;
 }
 
 .div1{
-    gap: 40px;
+    gap: 24px;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 
@@ -62,12 +73,20 @@
 .div2{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 30px;
     margin-top: 70px;
+    flex-wrap: wrap;
+    padding: 0 1rem 2rem;
+}
+
+.div-1 {
+    width: min(100%, 620px);
 }
 
 .div-1 h1{
      font-family: "DM Serif Display", serif;
-     font-size: 70px;
+     font-size: clamp(2.8rem, 6vw, 4.4rem);
      color: #384A62;
 }
 
@@ -90,25 +109,31 @@
     text-align: start;
     text-indent: 20px;
     font-size: 16px;
-    width: 40vw;
-    height: 13vh;
+    width: 100%;
+    max-width: 520px;
+    min-width: 0;
+    height: 60px;
 }
 
 .div-2 img{
-    height: 52vh;
-    width: 35vw;
-    margin-left: 50px;
+    height: auto;
+    width: 100%;
+    max-width: 520px;
+    margin-left: 0;
+    min-width: 0;
 }
 
 .third-section{
     gap: 30px;
-    margin: 70px;
+    margin: clamp(2rem, 5vw, 4.375rem);
     text-align: start;
     align-items: start;
 } 
 
 .product{
     justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .product h3{
@@ -124,21 +149,24 @@
 }
 
 .cards{
-      display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
 .card {
-    height: 480px;
-    width: 280px;
+    height: auto;
+    width: 100%;
+    max-width: 280px;
     margin-top: 20px;
 }
 
 .card img {
     margin-bottom: 20px;
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     height: 250px;
+     object-fit: cover;
      transition: 0.5s ease;
 }
 
@@ -187,7 +215,8 @@
 .card button {
     margin-left: 10px;
     text-align: center;
-    width: 180px;
+    width: 100%;
+    max-width: 180px;
     height: 40px;
     font-size: 15px;
     color: #fff;
@@ -201,7 +230,7 @@
 }
 
 .fourth-section{
-    margin: 70px;
+    margin: clamp(2rem, 5vw, 4.375rem);
 }
 
 .div3 h4{
@@ -220,12 +249,19 @@
 
 .fifth-section{
     background-color: #edf6fd;
-    
+    padding-bottom: 30px;
 }
 
 .div4{
     margin-top: 30px;
-    margin-left: 70px;
+    margin-left: clamp(1rem, 4vw, 4.375rem);
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 0 clamp(1rem, 4vw, 4.375rem) 50px;
 }
 
 .div4 h4{
@@ -237,9 +273,9 @@
 
 .div-3{
     background-color: #fff;
-    height: 170px;
-    width: 370px;
-    margin-left: 70px;
+    min-height: 170px;
+    width: 100%;
+    max-width: 370px;
     margin-bottom: 50px;
 }    
 
@@ -254,9 +290,8 @@
 }
 
 .div-3 p{
-    /* margin-top: 20px; */
-    margin-left: 70px;
-    margin-right: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
     font-size: 17px;
 }
 
@@ -270,7 +305,7 @@
 }
 
 .sixth-section{
-    padding: 100px 100px;
+    padding: clamp(2.5rem, 5vw, 6rem) clamp(1rem, 4vw, 6rem);
 }
 
 .sixth-section h4{
@@ -281,26 +316,40 @@
 }
 
 .div5{
-    gap: 100px;
+    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: start;
+}
+
+.div-4{
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+    align-items: start;
+    min-width: 0;
 }
 
 .div5 img{
     width: 90px;
     height: 70px;
     padding-right: 10px;
+    object-fit: contain;
 }
 
 .div-4 h6{
     color: #506683;
+    margin: 0 0 8px;
 }
 
 .div-4 p{
     padding-right: 10px;
     color: #708095;
+    margin: 0;
 }
 
 .seventh-section{
-    padding: 100px 100px;
+    padding: clamp(2.5rem, 5vw, 6rem) clamp(1rem, 4vw, 6rem);
     background-color: #F7F6F4;
 }
 
@@ -313,6 +362,9 @@
 
 .div6{
     justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 24px;
 }
 
 .div6 a{
@@ -320,10 +372,141 @@
 }
 
 footer{
-    padding: 50px;
+    padding: 50px 1rem;
     font-size: 20px;
     font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
+
+@media (max-width: 991px) {
+    .div2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .div-2 img {
+        width: 100%;
+        max-width: 520px;
+        margin-left: 0;
+    }
+
+    .div-1 input {
+        width: 100%;
+    }
+
+    .div5,
+    .div6 {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .div-1,
+    .div-2 {
+        width: 100%;
+    }
+
+    .div-1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .div-2 img {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .third-section,
+    .fourth-section,
+    .sixth-section,
+    .seventh-section {
+        margin: 30px 15px;
+        padding: 0;
+    }
+
+    .div4 {
+        margin-left: 15px;
+    }
+
+    .testimonials,
+    .div5,
+    .div6 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .div3,
+    .div-3 {
+        max-width: 100%;
+    }
+
+    .div-1 p {
+        font-size: 20px;
+    }
+
+    .div1 {
+        justify-content: flex-start;
+    }
+
+    .seventh-section .div6 {
+        gap: 12px;
+    }
+
+    .div5 {
+        grid-template-columns: 1fr;
+    }
+
+    .div6 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .head {
+        justify-content: center;
+    }
+
+    .div1 {
+        justify-content: flex-start;
+    }
+
+    .div-1 h1 {
+        font-size: 42px;
+    }
+
+    .product {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card button {
+        max-width: 100%;
+    }
+
+    .div-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .div5 img {
+        width: 60px;
+        height: auto;
+        padding-right: 0;
+    }
+
+    .fourth-section .div3 img {
+        display: none;
+    }
+
+    .seventh-section .div6 img {
+        display: none;
+    }
+}
+
